@@ -1,0 +1,26 @@
+@use '@angular/material' as mat;
+@import '@angular/material/theming';
+@include mat.core();
+
+$theme-primary: mat.define-palette(mat.$red-palette);
+$theme-accent: mat.define-palette(mat.$amber-palette, A200, A100, A400);
+
+@mixin palette($theme) {
+    $primary-color: mat.get-color-from-palette($theme, 500);
+    ::selection { background-color: $primary-color; }
+    .colored-hover:hover {color: $primary-color;}
+    .swiper-pagination-bullet {background: $primary-color;}
+    .activated-route {border-color: $primary-color !important;}
+    .mat-mdc-tab:not(.mat-mdc-tab-disabled) .mdc-tab-indicator__content--underline {border-color: $primary-color;}
+  }
+  
+@include palette($theme-primary);
+
+$theme: mat.define-dark-theme((
+    color: (primary: $theme-primary, accent: $theme-accent),
+    typography: mat.define-typography-config()
+));
+
+@include mat.all-component-themes($theme);
+  
+  

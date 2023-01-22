@@ -13,19 +13,24 @@ import {SeoService} from './core/services/seo.service';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {SharedModule} from './shared/shared.module';
-import {NavbarComponent} from './core/components/navbar/navbar.component';
 import {NotFoundComponent} from './core/components/not-found/not-found.component';
-import {FooterComponent} from './core/components/footer/footer.component';
 import {SwiperModule} from 'swiper/angular';
 import {NgOptimizedImage} from '@angular/common';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatListModule } from '@angular/material/list';
+import { LayoutComponent } from './core/components/layout/layout.component';
+import { TopNavComponent } from './core/components/layout/top-nav/top-nav.component';
+import { SideNavComponent } from './core/components/layout/side-nav/side-nav.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    NavbarComponent,
-    FooterComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    LayoutComponent, 
+    TopNavComponent, 
+    SideNavComponent,
   ],
   imports: [
     BrowserModule,
@@ -38,7 +43,9 @@ import {NgOptimizedImage} from '@angular/common';
     HttpClientModule,
     SharedModule,
     SwiperModule,
-    NgOptimizedImage
+    NgOptimizedImage,
+    MatSidenavModule,
+    MatListModule
   ],
   providers: [
     MoviesService,

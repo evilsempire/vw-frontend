@@ -33,12 +33,4 @@ export class AppComponent implements OnInit {
     });
   }
 
-  changeColorTheme(color: string): void {
-    this.themeColorInit = color;
-  }
-
-  checkSelectedTheme(color: string) {
-    return this.themeColorInit === color;
-  }
-
 }
