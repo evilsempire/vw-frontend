@@ -1,8 +1,6 @@
 import {Component, Inject, OnInit, PLATFORM_ID} from '@angular/core';
 import {isPlatformBrowser} from '@angular/common';
 import {NavigationEnd, Router} from '@angular/router';
-import {themeColors} from './core/constants/theme-colors';
-import {Color} from './core/enums/colors.enum';
 
 @Component({
   selector: 'app-home',
@@ -10,10 +8,6 @@ import {Color} from './core/enums/colors.enum';
   styleUrls: ['./app.component.css'],
 })
 export class AppComponent implements OnInit {
-
-  themeColorList = themeColors;
-  themeColorEnum = Color;
-  themeColorInit: string = Color.RED;
 
   private isBrowser: boolean = isPlatformBrowser(this.platformId);
 
