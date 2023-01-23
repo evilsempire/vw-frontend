@@ -1,16 +1,31 @@
-<mat-nav-list>
-  <h3>Warranty Key</h3>
-  <mat-list>
-    <mat-list-item>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/blank-page']">
-        <mat-icon class="sidenav-icon">insert_drive_file</mat-icon><span matListItemTitle>Warranty Key Master</span>
-      </a>
-    </mat-list-item>
-    <mat-list-item>
-      <a mat-list-item [routerLinkActive]="'active'" [routerLink]="['/blank-page']">
-        <mat-icon class="sidenav-icon">insert_drive_file</mat-icon><span matListItemTitle>Assign Key Manual</span>
-      </a>
-    </mat-list-item>
-  </mat-list>
+<ul class="nested-menu">
+  <li>
+    Warranty Key
+    <ul class="submenu">
+      <li>
+        <a href="#">Warranty Key Master</a>
+      </li>
+      <li class="active">
+        <a href="#" >Warranty Key Master</a>
+      </li>
+      <li>
+        <a href="#">Warranty Key Master</a>
+      </li>
+    </ul>
+  </li>
+  <li>
+    Contracts
+    <ul class="submenu">
+      <li>
+        <a href="#">Warranty Key Master</a>
+      </li>
+      <li class="active">
+        <a href="#" >Warranty Key Master</a>
+      </li>
+      <li>
+        <a href="#">Warranty Key Master</a>
+      </li>
+    </ul>
+  </li>
+</ul>
 
-</mat-nav-list>

@@ -1,29 +1,71 @@
 
 .nested-menu {
-  .nested {
-      list-style-type: none;
-  }
-  .submenu {
-      display: none;
-      height: 0;
-  }
-  & .expand {
-      &.submenu {
-          display: block;
-          list-style-type: none;
-          height: auto;
-          margin: 0;
-          li {
-              a {
-                  padding: 10px;
-                  display: block;
-              }
-          }
-      }
-  }
+    display: block;
+    margin-left: 24px;
+    margin-bottom:10px;
+    list-style: none;
+    font-weight: 700;
+    font-size: 20px;
+    padding:0px;
+    line-height: 24px;
+
+    li {
+        margin-bottom:24px;
+    }
+  
+    .submenu {
+        font-weight: normal;
+        font-size: 16px;
+        line-height: 20px;
+        display: block;
+        padding:0px;
+        margin:24px 0px 0px 0px;
+        list-style-type: circle;
+        list-style-position: inside;
+        li {
+            display: block;
+            position: relative;
+            margin: 8px 0px;
+            a {
+                padding: 0px 10px;
+                margin-left:8px;
+                display: block;
+                color:#fff;
+                text-decoration: none;
+            }
+            
+            &:hover {
+                a{
+                    text-decoration:underline;
+                    color:#fff;
+                }
+                &::before{
+                    background:#C6DFE7;
+                }
+            }
+            &::before {
+                content: "";
+                position: absolute;
+                top: 1.2em;
+                left: 0px;
+                margin-top: -.9em;
+                background:#919DA3;
+                height: 10px;
+                width: 10px;
+                border-radius: 50%;
+            }
+
+            &.active::before {
+                background:#ffffff;
+            }
+            
+        }
+
+        li:not(:last-child) {
+            margin-bottom: 10px;
+        }
+
+    }
+  
 }
 
-
-.mdc-list-item {
-    padding:0px 24px;
-}

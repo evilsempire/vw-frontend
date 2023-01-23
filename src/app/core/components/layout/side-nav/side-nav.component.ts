@@ -7,6 +7,35 @@ import { Component } from '@angular/core';
 })
 export class SideNavComponent  {
   showMenu = false;
+  folders = [
+    {
+      name: "Hello",
+      updated: "updated time"
+    },
+    {
+      name: "Hello3",
+      updated: "updated time"
+    },
+    {
+      name: "Hello2",
+      updated: "updated time"
+    },
+  ];
+
+  notes = [
+    {
+      name: "Hello",
+      updated: "updated time"
+    },
+    {
+      name: "Hello3",
+      updated: "updated time"
+    },
+    {
+      name: "Hello2",
+      updated: "updated time"
+    },
+  ]
   constructor() {}
 
 }
