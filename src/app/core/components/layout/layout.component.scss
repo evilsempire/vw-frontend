@@ -10,13 +10,13 @@
   right: 0;
   .sidenav-container {
     flex: 1;
-    background: #eee;
+    background: $white;
     .sidenav {
       width: 293px;
       background: $primary-color;
     }
     .main-container {
-      padding: 16px;
+      padding: 48px;
     }
   }
 }

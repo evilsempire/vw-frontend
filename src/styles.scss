@@ -7,7 +7,7 @@
 @import './styles/theme';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  color:#044666}
 
 .mat-toolbar.mat-primary {
   background-color: $white;
@@ -16,4 +16,8 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
   height: 110px;
   align-items: normal;
   position: absolute;
+}
+
+.mat-drawer-container {
+  color:#044666;
 }
