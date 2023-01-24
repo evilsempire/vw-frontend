@@ -1,0 +1,42 @@
+
+// .mat-mdc-row:nth-child(even){
+// background-color: #ffffff;
+// }
+
+// .mat-mdc-row:nth-child(odd){
+// background-color: #f8f8f8;
+// }
+
+.total-results-section{
+justify-content: center;
+align-items: center;
+display: flex;
+padding: 2rem;
+color: black;
+}
+
+.view-more-section{
+justify-content: center;
+align-items: center;
+display: flex;
+padding: 2rem;
+color: blue
+}
+
+.mat-mdc-table {
+  background: transparent;
+}
+.mdc-data-table__header-cell, .mdc-data-table__pagination-total, .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__cell {
+  color: #000000;
+}
+
+.mdc-data-table__cell, .mdc-data-table__header-cell {
+  border-bottom-color: #000000;
+}
+
+.truncate-cell {
+  max-width: 60px; /* feel free to include any other value */
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

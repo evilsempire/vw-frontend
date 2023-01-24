@@ -1,6 +1,6 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
@@ -22,16 +22,28 @@ import { TopNavComponent } from './core/components/layout/top-nav/top-nav.compon
 import { SideNavComponent } from './core/components/layout/side-nav/side-nav.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatIconModule } from '@angular/material/icon';
-
-
+import { ModulesComponent } from './features/modules/modules.component';
+import { TableComponent } from './core/components/table/table.component';
+import { DataPropertyGetterPipe } from './core/components/table/data-property-getter.pipe';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatSortModule } from '@angular/material/sort';
+import { MatInputModule } from '@angular/material/input';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatCheckboxModule } from '@angular/material/checkbox';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatTableModule } from '@angular/material/table';
+import { MatTooltipModule } from '@angular/material/tooltip';
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     NotFoundComponent,
-    LayoutComponent, 
-    TopNavComponent, 
+    LayoutComponent,
+    TopNavComponent,
     SideNavComponent,
+    ModulesComponent,
+    TableComponent,
+    DataPropertyGetterPipe
   ],
   imports: [
     BrowserModule,
@@ -47,7 +59,19 @@ import { MatIconModule } from '@angular/material/icon';
     MatSidenavModule,
     MatListModule,
     MatToolbarModule,
+    MatTableModule,
     MatIconModule,
+    MatSidenavModule,
+    MatListModule,
+    MatPaginatorModule,
+    MatCheckboxModule,
+    MatFormFieldModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    NoopAnimationsModule,
+    MatSortModule,
+    MatTabsModule,
+    MatTooltipModule
   ],
   providers: [
     MoviesService,

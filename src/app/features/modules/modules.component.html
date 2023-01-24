@@ -1,0 +1,18 @@
+<mat-tab-group class="temporary">
+
+  <mat-tab label="Table">
+    <app-table
+      [tableData]="warrantyKeys"
+      [tableColumns]="warrantyKeysTableColumns"
+      [isPageable]="true"
+      [defaultPageSize]="10"
+      (sort)="sortData($event)"
+      [isSelectRowAction]="true"
+    ></app-table>
+  </mat-tab>
+
+  <mat-tab label="Input"> Work in progress </mat-tab>
+
+  <mat-tab label="Date"> Work in progress </mat-tab>
+  <mat-tab label="Button"> Work in progress </mat-tab>
+</mat-tab-group>
