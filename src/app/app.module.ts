@@ -1,8 +1,8 @@
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
-import {BrowserAnimationsModule, NoopAnimationsModule} from '@angular/platform-browser/animations';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import { ServiceWorkerModule } from '@angular/service-worker';
-
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
 import { MoviesService } from './features/content/services/movies.service';
@@ -33,6 +33,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
+import { InputComponent } from './core/components/input/input.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -43,17 +44,20 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     SideNavComponent,
     ModulesComponent,
     TableComponent,
-    DataPropertyGetterPipe
+    DataPropertyGetterPipe,
+    InputComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
     ServiceWorkerModule.register('ngsw-worker.js', {
       enabled: environment.production,
       registrationStrategy: 'registerWhenStable:30000'
     }),
     BrowserAnimationsModule,
     HttpClientModule,
+    ReactiveFormsModule,
     SwiperModule,
     NgOptimizedImage,
     MatSidenavModule,
@@ -68,7 +72,6 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatFormFieldModule,
     MatInputModule,
     BrowserAnimationsModule,
-    NoopAnimationsModule,
     MatSortModule,
     MatTabsModule,
     MatTooltipModule

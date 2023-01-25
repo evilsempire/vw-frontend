@@ -1,0 +1,46 @@
+<mat-form-field
+  fxLayout="column"
+  fxLayoutAlign="start stretch"
+  [ngClass]="inputWidthPercentage ? 'w-' + inputWidthPercentage : 'w-25'"
+  class="pt5 pb5 ml5 mr5"
+>
+  <mat-label>{{ label }}</mat-label>
+  <mat-icon *ngIf="prefixIcon" matPrefix>prefixIcon</mat-icon>
+  <input
+    matInput
+    type="{{ inputType }}"
+    autocomplete="username"
+    [formControl]="formControl"
+    [readonly]="disabledFlag === true ? true : null"
+    value="formControl.value"
+    placeholder="{{ placeholder }}"
+  />
+  <button
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="formControl.reset()"
+  >
+    <mat-icon>highlight_off</mat-icon>
+  </button>
+  <mat-error *ngIf="formControl && formControl.hasError('required')">
+    {{ label }} is <strong>required</strong>
+  </mat-error>
+
+  <mat-error *ngIf="formControl && formControl.hasError('minlength')">
+    Minimum length for {{ label }} is <strong>{{ minLength }}</strong>
+  </mat-error>
+
+  <mat-error *ngIf="formControl && formControl.hasError('maxlength')">
+    Maximum length for {{ label }} is <strong>{{ maxLength }}</strong>
+  </mat-error>
+
+  <mat-error *ngIf="formControl && formControl.hasError('pattern')">
+    Should Follow pattern: {{formControl.errors.pattern.requiredPattern}} for <strong>{{ label }}</strong>
+
+  </mat-error>
+</mat-form-field>
+<!-- <ng-container *ngIf="formControl && formControl.touched && formControl.invalid">
+
+  <br/>
+</ng-container> -->

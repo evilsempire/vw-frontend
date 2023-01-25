@@ -6,6 +6,10 @@
 @import './styles/variables';
 @import './styles/theme';
 
+mat-icon{
+  font-family: 'Material Icons' !important;
+}
+
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  color:#044666}
 
@@ -20,4 +24,22 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  color:#044
 
 .mat-drawer-container {
   color:#044666;
+}
+.mat-mdc-tab-list{
+  background-color: #004666;
+}
+.mat-mdc-form-field-focus-overlay {
+  background-color: #dde3ea;
+}
+.mdc-text-field--filled:not(.mdc-text-field--disabled) {
+  background-color: #f5f5f5;
+}
+.mat-mdc-text-field-wrapper .mat-mdc-form-field-infix .mat-mdc-floating-label {
+  left: auto;
+  right: auto;
+  color: black;
+}
+
+.mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
+  color: black;
 }

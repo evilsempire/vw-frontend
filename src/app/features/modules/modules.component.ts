@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 import { Sort } from '@angular/material/sort';
 
 export interface WarrantyKeys {
@@ -25,6 +26,15 @@ export interface TableColumn {
 export class ModulesComponent implements OnInit {
   warrantyKeys: WarrantyKeys[];
   warrantyKeysTableColumns: TableColumn[];
+
+  /****************************************************************** */
+  /****************************************************************** */
+  //////////////////// REUSABLE INPUT CONTENT STARTS ///////////////////
+  emailFormControl = new FormControl('', [Validators.required, Validators.email,Validators.pattern(/^[@a-zA-Z0-9_-]*$/)]);
+  warrantyKeyFormControl = new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(3)]);
+  //////////////////// REUSABLE INPUT CONTENT ENDS /////////////////////
+  /****************************************************************** */
+  /****************************************************************** */
 
   ngOnInit(): void {
     this.initializeColumns();
