@@ -1,0 +1,17 @@
+.button-component{
+  margin: 1rem;
+}
+
+.mat-mdc-button:not(:disabled) {
+  /* color: var(--mdc-text-button-label-text-color, inherit); */
+  color: black;
+}
+button.mdc-button {
+  border-radius: 25px;
+  padding: 20px;
+  // background-color: #004666; //temporary
+}
+
+.mat-mdc-outlined-button {
+  --mdc-outlined-button-outline-color: #004666;
+}

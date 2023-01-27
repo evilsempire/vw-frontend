@@ -1,3 +1,4 @@
+import { ButtonComponent } from './core/components/button/button.component';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -34,6 +35,8 @@ import { MatTabsModule } from '@angular/material/tabs';
 import { MatTableModule } from '@angular/material/table';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { InputComponent } from './core/components/input/input.component';
+import { MatButtonModule } from '@angular/material/button';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -45,7 +48,8 @@ import { InputComponent } from './core/components/input/input.component';
     ModulesComponent,
     TableComponent,
     DataPropertyGetterPipe,
-    InputComponent
+    InputComponent,
+    ButtonComponent
   ],
   imports: [
     BrowserModule,
@@ -74,7 +78,8 @@ import { InputComponent } from './core/components/input/input.component';
     BrowserAnimationsModule,
     MatSortModule,
     MatTabsModule,
-    MatTooltipModule
+    MatTooltipModule,
+    MatButtonModule
   ],
   providers: [
     MoviesService,
