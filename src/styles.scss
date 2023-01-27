@@ -43,3 +43,28 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  color:#044
 .mdc-text-field:not(.mdc-text-field--disabled) .mdc-text-field__input {
   color: black;
 }
+
+//for development only
+.mat-mdc-form-field.mat-focused.mat-primary .mat-mdc-select-arrow {
+  /* color: #ffffffde; */
+  color: black !important;
+}
+
+.mat-mdc-select-arrow {
+  /* color: #ffffff8a; */
+  color: black !important;
+}
+
+.mat-mdc-select-value {
+  /* color: #ffffffde; */
+  color: black !important;
+}
+
+.mat-mdc-select-placeholder {
+  color: gray;
+}
+
+// .mat-mdc-select-arrow {
+.remove-caret-sign .mat-mdc-select-arrow {
+  display: none;
+}

@@ -1,0 +1,25 @@
+<mat-form-field
+  appearance="standard"
+  aria-placeholder="done"
+  floatLabel="always"
+>
+  <mat-label>{{ selectLabel }}</mat-label>
+  <mat-select
+    [placeholder]="selectPlaceholder"
+    [ngClass]="showClearIcon ? 'remove-caret-sign' : ''"
+    [formControl]="formControl"
+  >
+    <mat-option *ngFor="let option of options" [value]=option.key>
+      {{option.value}}
+  </mat-option>
+  </mat-select>
+  <button
+    *ngIf="showClearIcon"
+    matSuffix
+    mat-icon-button
+    aria-label="Clear"
+    (click)="formControl.reset()"
+  >
+    <mat-icon>highlight_off</mat-icon>
+  </button>
+</mat-form-field>

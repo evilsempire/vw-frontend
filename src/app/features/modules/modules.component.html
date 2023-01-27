@@ -7,7 +7,6 @@
       [defaultPageSize]="10"
       (sort)="sortData($event)"
       [isSelectRowAction]="true"
-
     ></app-table>
   </mat-tab>
 
@@ -15,16 +14,16 @@
   /****************************************************************** */
   /****************************************************************** */ -->
   <mat-tab label="Input">
-    <form >
+    <form>
       <app-input
         [formControl]="emailFormControl"
         [maxLength]="10"
         [minLength]="2"
         [label]="'Email'"
         [inputType]="'email'"
-        [placeholder] = "'Email'"
+        [placeholder]="'Email'"
         [inputWidthPercentage]="75"
-        [prefixIcon] = "'alternate_email'"
+        [prefixIcon]="'alternate_email'"
       >
       </app-input>
 
@@ -39,27 +38,33 @@
       </app-input>
     </form>
   </mat-tab>
- <!-- ///////////////// REUSABLE INPUT CONTENT ENDS //////////////////
+  <!-- ///////////////// REUSABLE INPUT CONTENT ENDS //////////////////
   /****************************************************************** */
   /****************************************************************** */ -->
 
   <mat-tab label="Date"> Work in progress </mat-tab>
-   <!-- ///////////////// REUSABLE BUTTON CONTENT STARTS //////////////////
+  <!-- ///////////////// REUSABLE BUTTON CONTENT STARTS //////////////////
   /****************************************************************** */
   /****************************************************************** */ -->
   <mat-tab label="Button">
     <app-button
-      [buttonText] = "'New Automation'"
-      [buttonIcon] = "'file_download'"
-      [disabledFlag]=false
+      [buttonText]="'New Automation'"
+      [buttonIcon]="'file_download'"
+      [disabledFlag]="false"
       [buttonColor]="'warn'"
     ></app-button>
   </mat-tab>
 
-   <!-- ///////////////// REUSABLE BUTTON CONTENT ENDS //////////////////
+  <!-- ///////////////// REUSABLE BUTTON CONTENT ENDS //////////////////
   /****************************************************************** */
   /****************************************************************** */ -->
   <mat-tab label="Select">
-
+    <app-select
+      [selectLabel]="'Country'"
+      [selectPlaceholder]="'Select'"
+      [showClearIcon]="false"
+      [formControl]="selectFormControl"
+      [options]="selectOptions"
+    ></app-select>
   </mat-tab>
 </mat-tab-group>

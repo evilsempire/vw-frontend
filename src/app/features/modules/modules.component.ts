@@ -32,6 +32,19 @@ export class ModulesComponent implements OnInit {
   //////////////////// REUSABLE INPUT CONTENT STARTS ///////////////////
   emailFormControl = new FormControl('', [Validators.required, Validators.email,Validators.pattern(/^[@a-zA-Z0-9_-]*$/)]);
   warrantyKeyFormControl = new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(3)]);
+
+  selectFormControl = new FormControl('', [Validators.required])
+  selectOptions = [
+    {
+      key: 1, value: 'Option 1',
+
+    },{
+      key: 2, value: 'Option 2'
+    },
+    {
+      key: 3, value: 'Option 3'
+    }
+  ]
   //////////////////// REUSABLE INPUT CONTENT ENDS /////////////////////
   /****************************************************************** */
   /****************************************************************** */
