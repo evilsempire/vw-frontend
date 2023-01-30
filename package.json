@@ -1,5 +1,5 @@
 {
-  "name": "angular-movies",
+  "name": "warranty-keys-and-contracts",
   "version": "0.2.0",
   "license": "MIT",
   "scripts": {
@@ -8,9 +8,7 @@
     "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
-    "e2e": "ng e2e",
-    "github": "ng build --output-path docs --base-href /Angular-Movies/",
-    "explore": "ng build --named-chunks --source-map && source-map-explorer dist/angular-movies/**/*.js"
+    "e2e": "ng e2e"
   },
   "private": true,
   "dependencies": {
