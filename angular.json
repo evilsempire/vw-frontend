@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "angular-movies": {
+    "warranty-keys-and-contracts": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/angular-movies",
+            "outputPath": "dist/warranty-keys-and-contracts",
             "index": "src/index.html",
             "main": "src/main.ts",
             "tsConfig": "src/tsconfig.app.json",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "angular-movies:build"
+            "browserTarget": "warranty-keys-and-contracts:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "angular-movies:build:production"
+              "browserTarget": "warranty-keys-and-contracts:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "angular-movies:build"
+            "browserTarget": "warranty-keys-and-contracts:build"
           }
         },
         "test": {
@@ -106,7 +106,7 @@
         }
       }
     },
-    "angular-movies-e2e": {
+    "warranty-keys-and-contracts-e2e": {
       "root": "",
       "sourceRoot": "",
       "projectType": "application",
@@ -115,7 +115,7 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "./protractor.conf.js",
-            "devServerTarget": "angular-movies:serve"
+            "devServerTarget": "warranty-keys-and-contracts:serve"
           }
         }
       }

@@ -1,10 +1,10 @@
-import { AngularMoviesPage } from './app.po';
+import { WarrantyKeysAndContracts } from './app.po';
 
-describe('angular-movies App', () => {
-  let page: AngularMoviesPage;
+describe('WarrantyKeysAndContracts App', () => {
+  let page: WarrantyKeysAndContracts;
 
   beforeEach(() => {
-    page = new AngularMoviesPage();
+    page = new WarrantyKeysAndContracts();
   });
 
   it('should display message saying app works', () => {
