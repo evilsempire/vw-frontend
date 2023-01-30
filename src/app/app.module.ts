@@ -10,7 +10,6 @@ import { environment } from '../environments/environment';
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
 import {NotFoundComponent} from './core/components/not-found/not-found.component';
-import {SwiperModule} from 'swiper/angular';
 import {NgOptimizedImage} from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatListModule } from '@angular/material/list';
@@ -39,7 +38,6 @@ import { MatIconModule } from '@angular/material/icon';
     }),
     BrowserAnimationsModule,
     HttpClientModule,
-    SwiperModule,
     NgOptimizedImage,
     MatSidenavModule,
     MatListModule,
