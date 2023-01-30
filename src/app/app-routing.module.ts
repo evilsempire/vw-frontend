@@ -6,8 +6,6 @@ import {NotFoundComponent} from './core/components/not-found/not-found.component
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: '404', component: NotFoundComponent, pathMatch: 'full'},
-  {path: 'movies', loadChildren: () => import('./features/content/content.module').then(m => m.ContentModule)},
-  {path: 'tv-shows', loadChildren: () => import('./features/content/content.module').then(m => m.ContentModule)},
   {path: '**', redirectTo: '404'}
 ];
 

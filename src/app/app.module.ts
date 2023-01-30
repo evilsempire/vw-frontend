@@ -5,10 +5,7 @@ import { ServiceWorkerModule } from '@angular/service-worker';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './features/home/home.component';
-import { MoviesService } from './features/content/services/movies.service';
 import { environment } from '../environments/environment';
-import {OnTVService} from './features/content/services/onTV.service';
-import {SeoService} from './core/services/seo.service';
 
 import {BrowserModule} from '@angular/platform-browser';
 import {AppRoutingModule} from './app-routing.module';
@@ -49,11 +46,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatToolbarModule,
     MatIconModule,
   ],
-  providers: [
-    MoviesService,
-    OnTVService,
-    SeoService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
