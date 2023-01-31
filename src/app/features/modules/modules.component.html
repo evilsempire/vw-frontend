@@ -4,9 +4,10 @@
       [tableData]="warrantyKeys"
       [tableColumns]="warrantyKeysTableColumns"
       [isPageable]="true"
-      [defaultPageSize]="10"
       (sort)="sortData($event)"
       [isSelectRowAction]="true"
+      [isServerSide]="true"
+      (getServerSide)="waitForTableResponse($event)"
     ></app-table>
   </mat-tab>
 

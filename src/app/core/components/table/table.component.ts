@@ -1,15 +1,22 @@
-import { AfterViewInit, Component, ViewChild, Input, Output, EventEmitter, OnInit } from '@angular/core';
-import { MatPaginator } from '@angular/material/paginator';
-import { MatSort, Sort } from '@angular/material/sort';
-import { MatTableDataSource } from '@angular/material/table';
-import { SelectionModel } from '@angular/cdk/collections';
-import { LiveAnnouncer } from '@angular/cdk/a11y';
-
+import {
+  AfterViewInit,
+  Component,
+  ViewChild,
+  Input,
+  Output,
+  EventEmitter,
+  OnInit,
+} from "@angular/core";
+import { MatPaginator } from "@angular/material/paginator";
+import { MatSort, Sort } from "@angular/material/sort";
+import { MatTableDataSource } from "@angular/material/table";
+import { SelectionModel } from "@angular/cdk/collections";
+import { LiveAnnouncer } from "@angular/cdk/a11y";
 
 export interface TableColumn {
   name: string;
   dataKey: string;
-  position?: 'right' | 'left';
+  position?: "right" | "left";
   isSortable?: boolean;
 }
 export interface WarrantyKeys {
@@ -24,11 +31,11 @@ export interface WarrantyKeys {
  * @title Data table with sorting, pagination, and filtering.
  */
 @Component({
-  selector: 'app-table',
-  templateUrl: './table.component.html',
-  styleUrls: ['./table.component.scss']
+  selector: "app-table",
+  templateUrl: "./table.component.html",
+  styleUrls: ["./table.component.scss"],
 })
-export class TableComponent implements AfterViewInit,OnInit {
+export class TableComponent implements AfterViewInit, OnInit {
   displayedColumns: string[];
   tableDataSource: MatTableDataSource<WarrantyKeys>;
   selection = new SelectionModel<WarrantyKeys>(true, []);
@@ -39,33 +46,36 @@ export class TableComponent implements AfterViewInit,OnInit {
   @Input() isPageable = false;
   @Input() isSortable = false;
   @Input() isFilterable = false;
+  @Input() isServerSide = false;
   @Input() tableColumns: TableColumn[] = [];
   @Input() isSelectRowAction: boolean;
-  @Input() paginationSizes: number[] = [5, 10, 15];
-  @Input() defaultPageSize = this.paginationSizes[1];
 
   @Output() sort: EventEmitter<Sort> = new EventEmitter();
   @Output() rowAction: EventEmitter<any> = new EventEmitter<any>();
-
+  @Output() getServerSide = new EventEmitter<any>();
   //@ts-ignore
   @Input() set tableData(data: any[]) {
     this.setTableDataSource(data);
   }
 
-
+  isLoading = false;
+  length = 0;
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
-
-    console.log(this.isSelectRowAction)
+    console.log(this.isSelectRowAction);
   }
 
   ngOnInit(): void {
-    const columnNames = this.tableColumns.map((tableColumn: TableColumn) => tableColumn.name);
+    const columnNames = this.tableColumns.map(
+      (tableColumn: TableColumn) => tableColumn.name
+    );
     if (this.isSelectRowAction) {
       this.displayedColumns = ["select", ...columnNames];
     } else {
       this.displayedColumns = columnNames;
     }
+
+    if(this.isServerSide) this.viewMore() // 0 is for reference
   }
 
   ngAfterViewInit() {
@@ -74,6 +84,7 @@ export class TableComponent implements AfterViewInit,OnInit {
 
   setTableDataSource(data: any) {
     console.log(data);
+    this.length = data.length;
     this.tableDataSource = new MatTableDataSource<any>(data);
     this.tableDataSource.paginator = this.paginator;
     this.tableDataSource.sort = this.matSort;
@@ -84,10 +95,9 @@ export class TableComponent implements AfterViewInit,OnInit {
     if (sortState.direction) {
       this._liveAnnouncer.announce(`Sorted ${sortState.direction}ending`);
     } else {
-      this._liveAnnouncer.announce('Sorting cleared');
+      this._liveAnnouncer.announce("Sorting cleared");
     }
   }
-
 
   /** Whether the number of selected elements matches the total number of rows. */
   isAllSelected() {
@@ -109,20 +119,30 @@ export class TableComponent implements AfterViewInit,OnInit {
   /** The label for the checkbox on the passed row */
   checkboxLabel(row?: WarrantyKeys): string {
     if (!row) {
-      return `${this.isAllSelected() ? 'deselect' : 'select'} all`;
+      return `${this.isAllSelected() ? "deselect" : "select"} all`;
     }
-    return `${this.selection.isSelected(row) ? 'deselect' : 'select'} row ${1}`;
+    return `${this.selection.isSelected(row) ? "deselect" : "select"} row ${1}`;
   }
 
   sortTable(sortParameters: Sort) {
     // defining name of data property, to sort by, instead of column name
-    sortParameters.active = this.tableColumns.find(column => column.name === sortParameters.active).dataKey;
+    sortParameters.active = this.tableColumns.find(
+      (column) => column.name === sortParameters.active
+    ).dataKey;
     this.sort.emit(sortParameters);
   }
 
   emitRowAction(row: any) {
     this.rowAction.emit(row);
   }
+
+  viewMore() {
+    //will be render server side
+
+    if(this.isServerSide){
+      this.isLoading = true;
+      this.getServerSide.emit(this.length+1);
+      this.isLoading = false;
+    }
+  }
 }
-
-

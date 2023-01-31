@@ -1,45 +1,46 @@
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import { NgModule } from '@angular/core';
-import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
-import { ServiceWorkerModule } from '@angular/service-worker';
-import { HttpClientModule } from '@angular/common/http';
-import {BrowserModule} from '@angular/platform-browser';
-import {NgOptimizedImage} from '@angular/common';
-import { MatSidenavModule } from '@angular/material/sidenav';
-import { MatListModule } from '@angular/material/list';
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { NgModule } from "@angular/core";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ServiceWorkerModule } from "@angular/service-worker";
+import { HttpClientModule } from "@angular/common/http";
+import { BrowserModule } from "@angular/platform-browser";
+import { NgOptimizedImage } from "@angular/common";
+import { MatSidenavModule } from "@angular/material/sidenav";
+import { MatListModule } from "@angular/material/list";
 
-import {AppRoutingModule} from './app-routing.module';
+import { AppRoutingModule } from "./app-routing.module";
 
-import { AppComponent } from './app.component';
-import { HomeComponent } from './features/home/home.component';
-import { environment } from '../environments/environment';
+import { AppComponent } from "./app.component";
+import { HomeComponent } from "./features/home/home.component";
+import { environment } from "../environments/environment";
 
-import { SelectComponent } from './core/components/select/select.component';
-import { ButtonComponent } from './core/components/button/button.component';
-import {NotFoundComponent} from './core/components/not-found/not-found.component';
-import { ModulesComponent } from './features/modules/modules.component';
-import { TableComponent } from './core/components/table/table.component';
-import { DataPropertyGetterPipe } from './core/components/table/data-property-getter.pipe';
-import { LayoutComponent } from './core/components/layout/layout.component';
-import { TopNavComponent } from './core/components/layout/top-nav/top-nav.component';
-import { SideNavComponent } from './core/components/layout/side-nav/side-nav.component';
-import { InputComponent } from './core/components/input/input.component';
+import { SelectComponent } from "./core/components/select/select.component";
+import { ButtonComponent } from "./core/components/button/button.component";
+import { NotFoundComponent } from "./core/components/not-found/not-found.component";
+import { ModulesComponent } from "./features/modules/modules.component";
+import { TableComponent } from "./core/components/table/table.component";
+import { DataPropertyGetterPipe } from "./core/components/table/data-property-getter.pipe";
+import { LayoutComponent } from "./core/components/layout/layout.component";
+import { TopNavComponent } from "./core/components/layout/top-nav/top-nav.component";
+import { SideNavComponent } from "./core/components/layout/side-nav/side-nav.component";
+import { InputComponent } from "./core/components/input/input.component";
 
-import { MatToolbarModule } from '@angular/material/toolbar';
-import { MatIconModule } from '@angular/material/icon';
+import { MatToolbarModule } from "@angular/material/toolbar";
+import { MatIconModule } from "@angular/material/icon";
 
-import { MatPaginatorModule } from '@angular/material/paginator';
-import { MatSortModule } from '@angular/material/sort';
-import { MatInputModule } from '@angular/material/input';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatCheckboxModule } from '@angular/material/checkbox';
-import { MatTabsModule } from '@angular/material/tabs';
-import { MatTableModule } from '@angular/material/table';
-import { MatTooltipModule } from '@angular/material/tooltip';
-import { MatButtonModule } from '@angular/material/button';
-import {  MatSelectModule } from '@angular/material/select';
+import { MatPaginatorModule } from "@angular/material/paginator";
+import { MatSortModule } from "@angular/material/sort";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatCheckboxModule } from "@angular/material/checkbox";
+import { MatTabsModule } from "@angular/material/tabs";
+import { MatTableModule } from "@angular/material/table";
+import { MatTooltipModule } from "@angular/material/tooltip";
+import { MatButtonModule } from "@angular/material/button";
+import { MatSelectModule } from "@angular/material/select";
+import { MatProgressSpinnerModule } from "@angular/material/progress-spinner";
 
-import { SwiperModule } from 'swiper/angular';
+import { SwiperModule } from "swiper/angular";
 @NgModule({
   declarations: [
     AppComponent,
@@ -53,15 +54,15 @@ import { SwiperModule } from 'swiper/angular';
     DataPropertyGetterPipe,
     InputComponent,
     ButtonComponent,
-    SelectComponent
+    SelectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ServiceWorkerModule.register('ngsw-worker.js', {
+    ServiceWorkerModule.register("ngsw-worker.js", {
       enabled: environment.production,
-      registrationStrategy: 'registerWhenStable:30000'
+      registrationStrategy: "registerWhenStable:30000",
     }),
     BrowserAnimationsModule,
     HttpClientModule,
@@ -84,9 +85,10 @@ import { SwiperModule } from 'swiper/angular';
     MatTabsModule,
     MatTooltipModule,
     MatButtonModule,
-    MatSelectModule
+    MatSelectModule,
+    MatProgressSpinnerModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

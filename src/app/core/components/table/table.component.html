@@ -1,5 +1,5 @@
 <div class="mock-table">
-  <div class="total-results-section">0 Total results</div>
+  <div class="total-results-section">{{length}} Total results</div>
   <div class="mat-elevation-z8">
     <table
       mat-table
@@ -76,9 +76,13 @@
         *matRowDef="let row; columns: displayedColumns"
         (click)="selection.toggle(row)"
       ></tr>
+      <tr class="mat-row" *matNoDataRow>
+        <td class="mat-cell" colspan="9999">No Data to show!</td>
+      </tr>
     </table>
+    <mat-progress-bar mode="indeterminate" color="accent" *ngIf="isLoading"></mat-progress-bar>
   </div>
 
-  <div *ngIf="isPageable" class="view-more-section">View more</div>
+  <div *ngIf="isPageable" class="view-more-section" (click)="viewMore()" style="cursor: pointer;">View more</div>
 
 </div>
