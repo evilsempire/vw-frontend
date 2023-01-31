@@ -1,0 +1,6 @@
+<mat-form-field>
+  <input matInput [hidden]="true" [(ngModel)]="checked" name="checked" />
+  <mat-checkbox color="primary" [checked]='checked' [disabled]="disabled">
+    {{ label }}
+  </mat-checkbox>
+</mat-form-field>
