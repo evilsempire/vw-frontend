@@ -1,5 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
-
+// /* You can add global styles to this file, and also import other style files */
 @import './styles/material';
 @import './styles/utils';
 @import './styles/responsive';
@@ -90,4 +89,25 @@ body { margin: 0; font-family: "VWTextWeb-Regular", "Helvetica Neue", sans-serif
 // .mat-mdc-select-arrow {
 .remove-caret-sign .mat-mdc-select-arrow {
   display: none;
+}
+
+.mat-mdc-checkbox .mdc-form-field {
+  color: #004666;
+}
+
+.mat-mdc-checkbox .mat-accent {
+  color: #004666;
+}
+.mat-mdc-checkbox.mat-accent { //temporary
+  --mdc-checkbox-selected-checkmark-color: #000;
+  --mdc-checkbox-selected-focus-icon-color: #fb6c3b;
+  --mdc-checkbox-selected-hover-icon-color: #fb6c3b;
+  --mdc-checkbox-selected-icon-color: #fb6c3b;
+  --mdc-checkbox-selected-pressed-icon-color: #fb6c3b;
+  --mdc-checkbox-unselected-focus-icon-color: #000000;
+  --mdc-checkbox-unselected-hover-icon-color: #000000;
+  --mdc-checkbox-disabled-selected-icon-color: #000000;
+  --mdc-checkbox-disabled-unselected-icon-color: #000000;
+  --mdc-checkbox-unselected-icon-color: #000000;
+  --mdc-checkbox-unselected-pressed-icon-color: #000000;
 }
