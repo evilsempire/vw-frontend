@@ -34,17 +34,7 @@ export class ModulesComponent implements OnInit {
   warrantyKeyFormControl = new FormControl('', [Validators.required, Validators.minLength(3),Validators.maxLength(3)]);
 
   selectFormControl = new FormControl('', [Validators.required])
-  selectOptions = [
-    {
-      key: 1, value: 'Option 1',
-
-    },{
-      key: 2, value: 'Option 2'
-    },
-    {
-      key: 3, value: 'Option 3'
-    }
-  ]
+  selectOptions = []
   //////////////////// REUSABLE INPUT CONTENT ENDS /////////////////////
   /****************************************************************** */
   /****************************************************************** */
@@ -114,6 +104,27 @@ export class ModulesComponent implements OnInit {
         columnWidth: 25
       },
     ];
+  }
+
+  waitForFilterResponse(value: string) {
+    console.log(value);
+    this.getCountryList({name: value});
+  }
+  private getCountryList(params: object = {}): void {
+    fetch('https://jsonplaceholder.typicode.com/todos').then(response => response.json())
+    .then(json => this.selectOptions = json);
+    //https://jsonplaceholder.typicode.com/todos
+    // this.selectOptions  = [
+    //   {
+    //     key: 1, value: 'Option 1',
+
+    //   },{
+    //     key: 2, value: 'Option 2'
+    //   },
+    //   {
+    //     key: 3, value: 'Option 3'
+    //   }
+    // ];
   }
 
   getWarrantyKeys(): any[] {

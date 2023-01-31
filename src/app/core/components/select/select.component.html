@@ -1,17 +1,81 @@
+<!-- <mat-form-field [appearance]="appearance" floatLabel="always">
+  <mat-label>{{ placeholder }}</mat-label>
+  <mat-select>
+    <mat-optgroup>
+      <mat-form-field [floatLabel]="'alaways'" fxFill>
+        <input
+          matInput
+          [placeholder]="searchPlaceholder"
+          [formControl]="filterFormControl"
+        />
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="company"
+          (click)="filterFormControl.setValue('')"
+        >
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-option disabled="true" style="display: none"></mat-option>
+    </mat-optgroup>
+
+    <div *ngIf="items | async as retrievedItems; else waitingResponse">
+      <mat-option
+        *ngFor="let item of retrievedItems"
+        [value]="item[bindValueKey]"
+      >
+        <span>{{ item[bindLabelKey] }}</span>
+      </mat-option>
+    </div>
+
+    <ng-template #waitingResponse>
+      <mat-option disabled="true">Please Wait...</mat-option>
+    </ng-template>
+  </mat-select>
+</mat-form-field> -->
 <mat-form-field
   appearance="standard"
   aria-placeholder="done"
   floatLabel="always"
 >
-  <mat-label>{{ selectLabel }}</mat-label>
+  <mat-label>{{ placeholder }}</mat-label>
   <mat-select
-    [placeholder]="selectPlaceholder"
     [ngClass]="showClearIcon ? 'remove-caret-sign' : ''"
     [formControl]="formControl"
+    [placeholder]="searchPlaceholder"
   >
-    <mat-option *ngFor="let option of options" [value]=option.key>
-      {{option.value}}
-  </mat-option>
+    <mat-optgroup>
+      <mat-form-field appearance="standard" floatLabel="always" fxFill>
+        <input
+          matInput
+          [placeholder]="searchPlaceholder"
+          [formControl]="filterFormControl"
+        />
+        <button
+          matSuffix
+          mat-icon-button
+          aria-label="company"
+          (click)="filterFormControl.setValue('')"
+        >
+          <mat-icon>clear</mat-icon>
+        </button>
+      </mat-form-field>
+      <mat-option disabled="true" style="display: none"></mat-option>
+    </mat-optgroup>
+
+    <div *ngIf="items | async as retrievedItems; else waitingResponse">
+      <mat-option
+        *ngFor="let item of retrievedItems"
+        [value]="item[bindValueKey]"
+      >
+        <span>{{ item[bindLabelKey] }}</span>
+      </mat-option>
+    </div>
+
+    <ng-template #waitingResponse>
+      <mat-option disabled="true">Please Wait...</mat-option>
+    </ng-template>
   </mat-select>
   <button
     *ngIf="showClearIcon"

@@ -60,11 +60,17 @@
   /****************************************************************** */ -->
   <mat-tab label="Select">
     <app-select
-      [selectLabel]="'Country'"
-      [selectPlaceholder]="'Select'"
-      [showClearIcon]="false"
+      fxFill
+      placeholder="Country"
+      formControlName="location"
+      searchPlaceholder="Select"
+      [items]="selectOptions"
+      (itemFilterServerSide)="waitForFilterResponse($event)"
+      bindLabelKey="title"
+      bindValueKey="id"
+      [showClearIcon]="true"
       [formControl]="selectFormControl"
-      [options]="selectOptions"
+      [isServerSide]="false"
     ></app-select>
   </mat-tab>
 </mat-tab-group>
