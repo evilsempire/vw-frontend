@@ -1,7 +1,7 @@
 
 .nested-menu {
     display: block;
-    margin-left: 24px;
+    margin-left: 0px;
     margin-bottom:10px;
     list-style: none;
     font-weight: 700;
@@ -11,24 +11,35 @@
 
     li {
         margin-bottom:24px;
+        span {
+            font-family: "VWTextWeb-Regular";
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 9px 24px;
+            gap: 10px;
+            height: 40px;
+            background: #1F2226;
+        }
     }
   
     .submenu {
-        font-weight: normal;
+        font-style: normal;
+        font-weight: 500;
         font-size: 16px;
-        line-height: 20px;
-        display: block;
-        padding:0px;
+        line-height: 15px;
+        color: #E1E1E1;
+
         margin:24px 0px 0px 0px;
         list-style-type: circle;
         list-style-position: inside;
         li {
             display: block;
             position: relative;
-            margin: 8px 0px;
+            margin: 20px 0px;
             a {
                 padding: 0px 10px;
-                margin-left:8px;
+                margin-left: 8px;
                 display: block;
                 color:#fff;
                 text-decoration: none;
@@ -57,6 +68,10 @@
 
             &.active::before {
                 background:#ffffff;
+                width: 12px;
+                height: 12px;
+                top: 1em;
+                margin-top: -1em;
             }
             
         }
