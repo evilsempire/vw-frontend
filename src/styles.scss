@@ -25,6 +25,17 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif;  color:#044
 .mat-drawer-container {
   color:#044666;
 }
+
+.mock-table{
+  border: 1px solid #D0D0D0;
+}
+.mat-mdc-row:nth-child(even){
+  background-color: rgb(255 255 255);
+}
+
+.mat-mdc-row:nth-child(odd){
+  background-color: rgb(248 248 248);
+}
 .mat-mdc-tab-list{
   background-color: #004666;
 }

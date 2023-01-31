@@ -19,14 +19,6 @@ export interface TableColumn {
   position?: "right" | "left";
   isSortable?: boolean;
 }
-export interface WarrantyKeys {
-  keyID: string;
-  description: string;
-  country: string;
-  lastUpdated: string; // should be date type in implementations
-  createdBy: string;
-  creationDate: string; // should be date type in implementation
-}
 /**
  * @title Data table with sorting, pagination, and filtering.
  */
@@ -35,12 +27,12 @@ export interface WarrantyKeys {
   templateUrl: "./table.component.html",
   styleUrls: ["./table.component.scss"],
 })
-export class TableComponent implements AfterViewInit, OnInit {
+export class TableComponent implements OnInit {
   displayedColumns: string[];
-  tableDataSource: MatTableDataSource<WarrantyKeys>;
-  selection = new SelectionModel<WarrantyKeys>(true, []);
+  tableDataSource: MatTableDataSource<any>;
+  selection = new SelectionModel<any>(true, []);
 
-  @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) matSort: MatSort;
 
   @Input() isPageable: boolean = false;
@@ -81,16 +73,12 @@ export class TableComponent implements AfterViewInit, OnInit {
     } // 0 is for reference
   }
 
-  ngAfterViewInit() {
-    this.tableDataSource.paginator = this.paginator;
-  }
-
   setTableDataSource(data: any) {
     console.log(data);
     this.length = data.length;
     this.tableDataSource = new MatTableDataSource<any>(data);
-    this.tableDataSource.paginator = this.paginator;
-    this.tableDataSource.sort = this.matSort;
+    // this.tableDataSource.paginator = this.paginator;
+    // this.tableDataSource.sort = this.matSort;
   }
 
   /** Announce the change in sort state for assistive technology. */
@@ -120,7 +108,7 @@ export class TableComponent implements AfterViewInit, OnInit {
   }
 
   /** The label for the checkbox on the passed row */
-  checkboxLabel(row?: WarrantyKeys): string {
+  checkboxLabel(row?: any): string {
     if (!row) {
       return `${this.isAllSelected() ? "deselect" : "select"} all`;
     }
@@ -141,8 +129,6 @@ export class TableComponent implements AfterViewInit, OnInit {
 
   viewMore() {
     //will be render server side
-    if (this.isServerSide) {
       this.getServerSide.emit(this.length + 1);
-    }
   }
 }
