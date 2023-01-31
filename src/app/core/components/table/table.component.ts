@@ -43,23 +43,24 @@ export class TableComponent implements AfterViewInit, OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
   @ViewChild(MatSort, { static: true }) matSort: MatSort;
 
-  @Input() isPageable = false;
-  @Input() isSortable = false;
-  @Input() isFilterable = false;
-  @Input() isServerSide = false;
+  @Input() isPageable: boolean = false;
+  @Input() isSortable: boolean = false;
+  @Input() isFilterable: boolean = false;
+  @Input() isServerSide: boolean = false;
   @Input() tableColumns: TableColumn[] = [];
-  @Input() isSelectRowAction: boolean;
+  @Input() isSelectRowAction: boolean = false;
+  @Input() tableRecordsLoading = false;
 
   @Output() sort: EventEmitter<Sort> = new EventEmitter();
   @Output() rowAction: EventEmitter<any> = new EventEmitter<any>();
   @Output() getServerSide = new EventEmitter<any>();
+
   //@ts-ignore
   @Input() set tableData(data: any[]) {
     this.setTableDataSource(data);
   }
 
-  isLoading = false;
-  length = 0;
+  length: number = 0;
 
   constructor(private _liveAnnouncer: LiveAnnouncer) {
     console.log(this.isSelectRowAction);
@@ -75,7 +76,9 @@ export class TableComponent implements AfterViewInit, OnInit {
       this.displayedColumns = columnNames;
     }
 
-    if(this.isServerSide) this.viewMore() // 0 is for reference
+    if (this.isServerSide) {
+      this.viewMore();
+    } // 0 is for reference
   }
 
   ngAfterViewInit() {
@@ -138,11 +141,8 @@ export class TableComponent implements AfterViewInit, OnInit {
 
   viewMore() {
     //will be render server side
-
-    if(this.isServerSide){
-      this.isLoading = true;
-      this.getServerSide.emit(this.length+1);
-      this.isLoading = false;
+    if (this.isServerSide) {
+      this.getServerSide.emit(this.length + 1);
     }
   }
 }

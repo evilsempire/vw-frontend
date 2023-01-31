@@ -80,7 +80,7 @@
         <td class="mat-cell" colspan="9999">No Data to show!</td>
       </tr>
     </table>
-    <mat-progress-bar mode="indeterminate" color="accent" *ngIf="isLoading"></mat-progress-bar>
+    <mat-progress-bar mode="indeterminate" color="accent" *ngIf="tableRecordsLoading"></mat-progress-bar>
   </div>
 
   <div *ngIf="isPageable" class="view-more-section" (click)="viewMore()" style="cursor: pointer;">View more</div>

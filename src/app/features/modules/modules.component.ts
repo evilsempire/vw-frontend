@@ -26,7 +26,7 @@ export interface TableColumn {
 export class ModulesComponent implements OnInit {
   warrantyKeys: WarrantyKeys[];
   warrantyKeysTableColumns: TableColumn[];
-
+  tableRecordsLoading: boolean = false;
   /****************************************************************** */
   /****************************************************************** */
   //////////////////// REUSABLE INPUT CONTENT STARTS ///////////////////
@@ -122,8 +122,11 @@ export class ModulesComponent implements OnInit {
 
   waitForTableResponse(event: any) {
     console.log(event);
+    this.tableRecordsLoading = true;
     setTimeout(() => {
+
       this.warrantyKeys = this.getWarrantyKeys(event);
+      this.tableRecordsLoading = false;
     },2000)
   }
   waitForFilterResponse(value: string) {
