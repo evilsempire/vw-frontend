@@ -7,11 +7,8 @@ import { ModulesComponent } from './features/modules/modules.component';
 const routes: Routes = [
   {path: '', component: HomeComponent, pathMatch: 'full'},
   {path: '404', component: NotFoundComponent, pathMatch: 'full'},
-  {path: 'movies', loadChildren: () => import('./features/content/content.module').then(m => m.ContentModule)},
-  {path: 'tv-shows', loadChildren: () => import('./features/content/content.module').then(m => m.ContentModule)},
   {path: 'modules', component: ModulesComponent, pathMatch: 'full'},
-  {path: '**', redirectTo: '404'},
-
+  {path: '**', redirectTo: '404'}
 ];
 
 @NgModule({

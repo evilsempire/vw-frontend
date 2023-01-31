@@ -1,6 +1,6 @@
 import { browser, element, by } from 'protractor';
 
-export class AngularMoviesPage {
+export class WarrantyKeysAndContracts {
   navigateTo() {
     return browser.get('/');
   }
