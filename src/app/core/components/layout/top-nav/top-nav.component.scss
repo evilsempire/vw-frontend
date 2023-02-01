@@ -1,22 +1,17 @@
-.nav-brand {
-  width:290px;
-  margin-left:10px;
-}
 .nav-brand .logo{
-  position: relative;
-  display: inline-block;
-  margin-top: 29px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width:275px;
 }
 
 .nav-brand .logo:after {
   content: "";
   display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 277px;
+  width: 275px;
   height: 57px;
-  background: url('../../../../../assets/img/vw-logo.jpeg');
+  background: url('../../../../../assets/img/logo.png');
   background-size: cover;
 }
 
@@ -24,7 +19,6 @@
 .right-nav {
   width: 100%;
   display: flex;
-  margin:0px 40px;
 }
 
 .nav-spacer {
@@ -38,24 +32,31 @@
 }
 .nav-pipe::after {
   content: "";
-  height: 50px;
+  height: 48px;
   align-items: normal;
   display: flex;
   border-right: 2px solid;
-  margin: 0px 30px;
+  margin: 0px 25px;
 }
 
 .nav-flex {
   display: flex;
   align-items: center;
-}
-
-.nav-signout {
-  letter-spacing: 0.1px;
-  color: #006590;
-  border: 1px solid #71787E;
-  border-radius: 20px;
-  padding: 5px 20px;
+  .username {
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .signout {
+    border: 1px solid #71787E;
+    border-radius: 100px;
+    color: #006590;
+    font-family: 'VWHeadWeb-Bold';
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0.10000000149011612px;
+    text-align: center;
+  }
 }
 
 

@@ -8,5 +8,5 @@ import { Component } from '@angular/core';
 export class LayoutComponent  {
   sideNavOpened = true;
   sideNavMode: 'side' | 'over' = 'side';
-  toolBarHeight = 110;
+  toolBarHeight = 106;
 }

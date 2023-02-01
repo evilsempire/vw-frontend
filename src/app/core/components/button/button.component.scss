@@ -1,15 +1,17 @@
-.button-component{
-  margin: 1rem;
-}
-
 .mat-mdc-button:not(:disabled) {
   /* color: var(--mdc-text-button-label-text-color, inherit); */
   color: black;
 }
 button.mdc-button {
-  border-radius: 25px;
-  padding: 20px;
-  // background-color: #004666; //temporary
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 4px;
+  height: 40px;
+  background: #006590;
+  border-radius: 100px;
+
 }
 
 .mat-mdc-outlined-button {

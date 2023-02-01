@@ -1,5 +1,26 @@
-<div class="container">
+<div>
 
-    <h1>Warranty Key Master</h1>
+    <h1 class="mat-headline-2">Warranty Key Master</h1>
 
+    <div class="content">
+
+        <div class="table-head">
+                <app-button
+                [buttonText]="'Create New Warranty Key'"
+                [buttonIcon]="'add'"
+                [disabledFlag]="false"
+                [buttonColor]="'warn'"
+            ></app-button>
+        </div>
+       
+
+        <app-table
+            [tableData]="warrantyKeys"
+            [tableColumns]="warrantyKeysTableColumns"
+            (sort)="sortData($event)"
+            [isServerSide]="true"
+            (getServerSide)="waitForTableResponse($event)"
+            [tableRecordsLoading]="tableRecordsLoading"
+            ></app-table>
+    </div>
 </div>
