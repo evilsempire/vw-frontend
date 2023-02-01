@@ -1,5 +1,4 @@
 <section class="button-component">
-  {{buttonType}}
   <ng-container [ngSwitch]="buttonType">
     <button *ngSwitchCase="'mat-flat-button'" mat-flat-button [color]="buttonColor" [disabled]="disabledFlag">
       <mat-icon *ngIf="buttonIcon">{{buttonIcon}}</mat-icon>

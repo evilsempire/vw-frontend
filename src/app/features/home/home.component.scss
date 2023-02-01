@@ -1,0 +1,19 @@
+.content{
+  padding-right:100px;
+}
+
+.table-head {
+  margin-bottom:40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .totol_results{
+    color: #5A5A5A;
+    font-family: 'VWTextWeb-Regular';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.25px;
+  }
+}
