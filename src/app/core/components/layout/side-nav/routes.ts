@@ -1,4 +1,5 @@
 import { Routes } from "@angular/router";
+import { HomeComponent } from "app/features/home/home.component";
 import { ModulesComponent } from "app/features/modules/modules.component";
 import { WarrantyKeyAssignManualComponent } from "app/pages/warranty-keys/warranty-key-assign-manual/warranty-key-assign-manual.component";
 import { WarrantyKeysComponent } from "app/pages/warranty-keys/warranty-keys.component";
@@ -13,13 +14,13 @@ const routes: any = [
       {
         path: "",
         title: "Warranty Key Master",
-        component: WarrantyKeysComponent,
+        component: HomeComponent,
         showAsLink: false,
       },
       {
         path: "warranty-keys",
         title: "Warranty Key Master",
-        component: WarrantyKeysComponent,
+        component: HomeComponent,
         showAsLink: true,
       },
       {
