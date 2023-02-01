@@ -1,29 +1,9 @@
 <ul class="nested-menu">
-  <li>
-    <span>Warranty Key</span>
-    <ul class="submenu">
-      <li>
-        <a href="#">Warranty Key Master</a>
-      </li>
-      <li class="active">
-        <a href="#" >Warranty Key Master</a>
-      </li>
-      <li>
-        <a href="#">Warranty Key Master</a>
-      </li>
-    </ul>
-  </li>
-  <li>
-    <span>Contracts</span>
-    <ul class="submenu">
-      <li>
-        <a href="#">Warranty Key Master</a>
-      </li>
-      <li class="active">
-        <a href="#" >Warranty Key Master</a>
-      </li>
-      <li>
-        <a href="#">Warranty Key Master</a>
+  <li *ngFor="let route of menu">
+    <span *ngIf="route.showMenu">{{route.title}}</span>
+    <ul *ngIf="route.children" class="submenu">
+      <li routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" *ngFor="let childRoute of route.children">
+        <a *ngIf="childRoute.showAsLink" [routerLink]="childRoute.path" href="#">{{childRoute.title}}</a>
       </li>
     </ul>
   </li>
