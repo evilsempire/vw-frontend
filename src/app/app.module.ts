@@ -1,3 +1,4 @@
+import { DateComponent } from './core/components/date/date.component';
 import { CheckboxComponent } from './core/components/checkbox/checkbox.component';
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
@@ -42,6 +43,8 @@ import { MatSelectModule } from "@angular/material/select";
 import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { SwiperModule } from "swiper/angular";
+
+import { RouterModule, Routes }   from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,8 @@ import { SwiperModule } from "swiper/angular";
     InputComponent,
     ButtonComponent,
     SelectComponent,
-    CheckboxComponent
+    CheckboxComponent,
+    DateComponent
   ],
   imports: [
     BrowserModule,
@@ -89,6 +93,7 @@ import { SwiperModule } from "swiper/angular";
     MatButtonModule,
     MatSelectModule,
     MatProgressBarModule,
+    RouterModule.forRoot([])
   ],
   providers: [],
   bootstrap: [AppComponent],
