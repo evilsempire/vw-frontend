@@ -1,30 +1,61 @@
 
-.mdc-data-table__cell, .mdc-data-table__header-cell{
-  gap: 20px;
-  border-bottom: 1px solid #979797;
+
+.mat-mdc-table {
+  padding: 0px;
+  border: 1px solid #979797;
+  background-color: transparent;
+  font-family: 'VWTextWeb-Regular';
   font-style: normal;
   font-weight: 500;
   font-size: 12px;
   line-height: 16px;
-  letter-spacing: 0.5px;
-  padding:8px 16px;
-}
-
-.mdc-data-table__cell{
-  font-family: 'VWTextWeb-Regular';
+  letter-spacing: 0.4px;
   color: #5A5A5A;
-}
-.mdc-data-table__header-cell {
-  font-family: 'VWTextWeb-Bold';
-  color: #333B42;
-}
 
-.mat-mdc-table .mdc-data-table__row{
-  height: auto;
-  background-color: #ffffff;
-  &:nth-child(even){
-    background-color: #F8F8F8;
+  .mdc-data-table__row{
+    height: auto;
+    background-color: #ffffff;
+    &:nth-child(even){
+      background-color: #F8F8F8;
+    }
   }
+
+  .mdc-data-table__cell, .mdc-data-table__header-cell{
+    gap: 20px;
+    border-bottom: 1px solid #979797;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.5px;
+    padding:8px 16px;
+  }
+  
+  .mdc-data-table__cell{
+    font-family: 'VWTextWeb-Regular';
+    color: #5A5A5A;
+  }
+  .mdc-data-table__header-cell {
+    font-family: 'VWTextWeb-Bold';
+    color: #333B42;
+  }
+
+
+  .mdc-data-table__header-cell{
+    color: #333B42;
+    font-weight: bold;
+  }
+
+
+
+  .truncate-cell {
+    max-width: 60px; /* feel free to include any other value */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+
 }
 
 .mat-elevation-z8, .mat-mdc-elevation-specific.mat-elevation-z8 {
@@ -37,6 +68,7 @@
 ::ng-deep .mat-sort-header-arrow[style] {
   background: url('../../../../assets/img/swaparraow.svg');
   opacity: 1!important;
+  transform:none!important;
   // Hide default arrow stem
   .mat-sort-header-stem {
     display: none;
@@ -54,30 +86,27 @@
 }
 
 // // My custom ascending arrow
-// [aria-sort="ascending"] {
-//   ::ng-deep .mat-sort-header-arrow {
-//     .mat-sort-header-indicator {
-//       &::before {
-//         content: "\2191";
-//         top: -1em;
-//         position: absolute;
-//       }
-//     }
-//   }
-// }
+[aria-sort="ascending"] {
+  ::ng-deep .mat-sort-header-arrow[style]{
+      &::before {
+        content: "\2191";
+        position: absolute;
+        
+      }
+      background-image: none!important;
+  }
+}
 
 // // My custom descending arrow
-// [aria-sort="descending"] {
-//   ::ng-deep .mat-sort-header-arrow {
-//     .mat-sort-header-indicator {
-//       &::before {
-//         content: "\2193";
-//         top: -1em;
-//         position: absolute;
-//       }
-//     }
-//   }
-// }
+[aria-sort="descending"] {
+  ::ng-deep .mat-sort-header-arrow[style] {
+      &::before {
+        content: "\2193";
+        position: absolute;
+      }
+      background-image: none!important;
+  }
+}
 
 
 .view-more-section{
@@ -88,35 +117,7 @@
   color: blue
 }
 
-.mat-mdc-table {
-  padding: 0px;
-  border: 1px solid #979797;
-  background-color: transparent;
-  font-family: 'VWTextWeb-Regular';
-  font-style: normal;
-  font-weight: 500;
-  font-size: 12px;
-  line-height: 16px;
-  letter-spacing: 0.4px;
+.mdc-data-table__pagination-total,
+ .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__cell {
   color: #5A5A5A;
-}
-
-.mdc-data-table__pagination-total, .mdc-data-table__pagination-rows-per-page-label, .mdc-data-table__cell {
-  color: #5A5A5A;
-}
-
-.mdc-data-table__header-cell{
-  color: #333B42;
-  font-weight: bold;
-}
-
-// .mdc-data-table__cell, .mdc-data-table__header-cell {
-//   border-bottom-color: #000000;
-// }
-
-.truncate-cell {
-  max-width: 60px; /* feel free to include any other value */
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
 }
