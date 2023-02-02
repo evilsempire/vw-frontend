@@ -3,7 +3,7 @@ import { HomeComponent } from "app/features/home/home.component";
 import { ModulesComponent } from "app/features/modules/modules.component";
 import { WarrantyKeyAssignManualComponent } from "app/pages/warranty-keys/warranty-key-assign-manual/warranty-key-assign-manual.component";
 import { WarrantyKeysComponent } from "app/pages/warranty-keys/warranty-keys.component";
-import { NotFoundComponent } from "../../not-found/not-found.component";
+import { NotFoundComponent } from "./core/components/not-found/not-found.component";
 
 const routes: any = [
   {

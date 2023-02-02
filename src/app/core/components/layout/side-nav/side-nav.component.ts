@@ -1,5 +1,5 @@
 import { Component } from "@angular/core";
-import routes from "./routes";
+import routes from "../../../../app-routes";
 @Component({
   selector: "app-side-nav",
   templateUrl: "./side-nav.component.html",

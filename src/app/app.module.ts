@@ -44,7 +44,7 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 
 import { SwiperModule } from "swiper/angular";
 
-import { RouterModule, Routes }   from '@angular/router';
+import { RouterModule }   from '@angular/router';
 @NgModule({
   declarations: [
     AppComponent,
