@@ -1,55 +1,57 @@
 
-// .mat-mdc-row:nth-child(even){
-// background-color: #ffffff;
-// }
-
-// .mat-mdc-row:nth-child(odd){
-// background-color: #f8f8f8;
-// }
-
-
-
-
-.mat-mdc-table .mdc-data-table__row:nth-child(even){
-  background-color: #F8F8F8;
+.mdc-data-table__cell, .mdc-data-table__header-cell{
+  gap: 20px;
+  border-bottom: 1px solid #979797;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 12px;
+  line-height: 16px;
+  letter-spacing: 0.5px;
+  padding:8px 16px;
 }
-.mat-mdc-table .mdc-data-table__row:nth-child(odd){
+
+.mdc-data-table__cell{
+  font-family: 'VWTextWeb-Regular';
+  color: #5A5A5A;
+}
+.mdc-data-table__header-cell {
+  font-family: 'VWTextWeb-Bold';
+  color: #333B42;
+}
+
+.mat-mdc-table .mdc-data-table__row{
+  height: auto;
   background-color: #ffffff;
+  &:nth-child(even){
+    background-color: #F8F8F8;
+  }
 }
+
 .mat-elevation-z8, .mat-mdc-elevation-specific.mat-elevation-z8 {
   box-shadow: none;
 }
-.mdc-data-table__cell, .mdc-data-table__header-cell{
-  gap: 20px;
-  border-bottom: 1px solid #979797;
+
+
+
+
+::ng-deep .mat-sort-header-arrow[style] {
+  background: url('../../../../assets/img/swaparraow.svg');
+  opacity: 1!important;
+  // Hide default arrow stem
+  .mat-sort-header-stem {
+    display: none;
+  }
+  .mat-sort-header-indicator {
+    opacity: 1;
+    color: black;
+    font-weight: bold;
+
+    // Hide default arrow as its composed of left, right and middle
+    .mat-sort-header-pointer-left, .mat-sort-header-pointer-right, .mat-sort-header-pointer-middle  {
+      display: none;
+    }
+  }
 }
-.mdc-data-table__cell, .mdc-data-table__header-cell{
-  gap: 20px;
-  border-bottom: 1px solid #979797;
-}
-
-
-
-
-
-
-// ::ng-deep .mat-sort-header-arrow[style] {
-
-//   // Hide default arrow stem
-//   .mat-sort-header-stem {
-//     display: none;
-//   }
-//   .mat-sort-header-indicator {
-//     opacity: 1;
-//     color: black;
-//     font-weight: bold;
-
-//     // Hide default arrow as its composed of left, right and middle
-//     .mat-sort-header-pointer-left, .mat-sort-header-pointer-right, .mat-sort-header-pointer-middle  {
-//       display: none;
-//     }
-//   }
-// }
 
 // // My custom ascending arrow
 // [aria-sort="ascending"] {

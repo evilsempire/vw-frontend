@@ -61,11 +61,11 @@ export class HomeComponent implements OnInit {
   initializeColumns(): void {
     this.warrantyKeysTableColumns = [
       {
-        name: "key ID",
+        name: "Key ID",
         dataKey: "keyID",
         position: "left",
         isSortable: true,
-        columnWidth: 10,
+        columnWidth: 5,
       },
       {
         name: "Description",

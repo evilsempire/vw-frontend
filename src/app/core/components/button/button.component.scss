@@ -11,7 +11,20 @@ button.mdc-button {
   height: 40px;
   background: #006590;
   border-radius: 100px;
+  font-family: 'VWTextWeb-Bold';
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 20px;
+  font-style: normal;
+  letter-spacing: 0.10000000149011612px;
+  text-align: center;
+}
 
+button.mdc-button.mat-blue{
+  border: 1px solid #71787E;
+  color: #006590;
+  background-color: #fff;
+  padding: 0px 20px;
 }
 
 .mat-mdc-outlined-button {

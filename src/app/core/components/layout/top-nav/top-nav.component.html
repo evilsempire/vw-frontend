@@ -11,15 +11,17 @@
       <div class="nav-flex nav-tagline">
         <span class="nav-pipe"></span>
         <span class="mat-headline-1">Warranty Key and Contract Management</span>
-      </div>
-      <span class="nav-spacer"></span>
-      <div class="nav-flex nav-right-menu">
         <span class="username">John Doe</span>
+      </div>
+      
+      <div class="nav-right-menu">
         <span class="nav-pipe"></span>
-
-        <button mat-stroked-button class="signout">
-          Sign Out
-        </button>
+        <app-button
+          [buttonText]="'Sign Out'"
+          [buttonColor]="'blue'"
+          [buttonType]="'mat-stroked-button'"
+          class="signout"
+      ></app-button>
       </div>
   </div>
   
